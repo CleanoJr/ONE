@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jojuinho Legal</title>
+</head>
+<body>    
+
+    <input\>
+    <button>Arriscar</button>
+
+    <script>
+
+        function pulaLinha() {
+            document.write("<br>");
+        }
+        
+        function mostra(frase) {
+            document.write(frase);
+            pulaLinha();
+        }
+        
+        function sorteia(n) {
+            sorteio = Math.round(Math.random() * n);
+            return sorteio;
+        }
+
+        var nTentativas = 3;
+        var n = parseInt(prompt("Digite o numero limite: "));
+
+        var numeroPensado = sorteia(n);
+        
+        for (i = 1; i < nTentativas; i++) {            
+            
+            chute = parseInt(prompt("Qual você acha que é?"));
+
+            if(chute == numeroPensado) {                
+                mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+                break;
+
+            } else {
+                if(chute > numeroPensado) {
+                    mostra("Você errou! Seu chute foi MAIOR que o numero pensado");
+                } else {
+                    mostra("Você errou! Seu chute foi MENOR que o numero pensado");
+                }
+            }
+        
+
+        }
+        
+    </script>
+
+</body>
+</html>
